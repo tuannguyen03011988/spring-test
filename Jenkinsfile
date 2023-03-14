@@ -6,15 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('pre-build') {
-      agent {
-        node {
-          label 'nonprod'
-        }
-
-      }
+    stage('Pre build') {
       steps {
-        sh 'echo "Hello World!!!"'
+        sh 'echo "hello"'
       }
     }
 
