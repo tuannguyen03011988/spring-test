@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
 		   docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-                    	docker.build("das1942/java-spring-hello:${TAG}")
+                    	docker.build("tuannguyen03011988/jenkins:${TAG}")
 		   }
                 }
             }
@@ -26,8 +26,8 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-                        docker.image("das1942/java-spring-hello:${TAG}").push()
-                        docker.image("das1942/java-spring-hello:${TAG}").push("latest")
+                        docker.image("tuannguyen03011988/jenkins:${TAG}").push()
+                        docker.image("tuannguyen03011988/jenkins:${TAG}").push("latest")
                     }
                 }
             }
